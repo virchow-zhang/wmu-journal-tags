@@ -136,6 +136,10 @@ npm run test:unit      # 匹配引擎单元测试（Node 原生运行，13 项�
 - `powershell -File tools/e2e-test.ps1`：真实 Zotero 10 端到端测试（隔离 profile，通过本地连接器端点
   创建条目并验证自动打标；已验证 T1 / T2(A) / 综述 / 仅刊名匹配 / 未匹配 5 个场景）
 
+> CI（GitHub Actions）执行：lint、构建、匹配引擎单元测试。
+> `test/plugin.integration.ts`（Zotero 内 mocha 测试，需 `zotero-plugin test` 的调试器流程）
+> 与 E2E 脚本用于本地验证。
+
 ### 目录结构
 
 ```
