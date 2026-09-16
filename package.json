@@ -1,0 +1,65 @@
+{
+  "name": "wmu-journal-tags",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "展示温州医科大学科技类共识期刊目录（T系列、Q系列）分类标签的 Zotero 插件",
+  "config": {
+    "addonName": "WMU 期刊分类标签",
+    "addonID": "wmu-journal-tags@wmu.local",
+    "addonRef": "wmujournaltags",
+    "addonInstance": "WMUJournalTags",
+    "prefsPrefix": "extensions.zotero.wmujournaltags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virchow-zhang/wmu-journal-tags.git"
+  },
+  "author": "virchow-zhang",
+  "bugs": {
+    "url": "https://github.com/virchow-zhang/wmu-journal-tags/issues"
+  },
+  "homepage": "https://github.com/virchow-zhang/wmu-journal-tags#readme",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "start": "zotero-plugin serve",
+    "build": "zotero-plugin build && tsc --noEmit",
+    "lint:check": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "release": "zotero-plugin release",
+    "test": "zotero-plugin test",
+    "test:unit": "node --experimental-strip-types test/matcher.unit.ts",
+    "sync-data": "node tools/sync-data.mjs",
+    "update-deps": "npm update --save"
+  },
+  "dependencies": {
+    "zotero-plugin-toolkit": "^5.1.0-beta.13"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.0",
+    "@zotero-plugin/eslint-config": "^0.6.7",
+    "chai": "^6.2.1",
+    "eslint": "^9.39.2",
+    "mocha": "^11.7.5",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "zotero-plugin-scaffold": "^0.8.2",
+    "zotero-types": "^4.1.0-beta.4"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "endOfLine": "lf",
+    "overrides": [
+      {
+        "files": [
+          "*.xhtml"
+        ],
+        "options": {
+          "htmlWhitespaceSensitivity": "css"
+        }
+      }
+    ]
+  }
+}
